@@ -39,6 +39,11 @@
 .todo__text {
   display: inline;
 }
+.todo__text--completed {
+  color: lightgray;
+  text-decoration: line-through;
+  font-style: italic;
+}
 .todo__checkbox {
   margin-right: 10px;
   font-size: 30px;

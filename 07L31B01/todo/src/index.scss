@@ -28,6 +28,11 @@
   color: #333333;
   &__text {
     display: inline;
+    &--completed {
+      color: lightgray;
+      text-decoration: line-through;
+      font-style: italic;
+    }
   }
   &__checkbox {
     margin-right: 10px;
