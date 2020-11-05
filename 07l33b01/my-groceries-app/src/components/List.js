@@ -1,27 +1,21 @@
 import React from "react";
 import ListItem from "./ListItem";
 
-class List extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      groceryItems: [
-        { id: 1, title: "Appels" },
-        { id: 2, title: "Pak melk" },
-      ],
-    };
-  }
-
-  makeGroceriesList = () => {
-    const groceriesList = this.state.groceryItems.map((item) => {
-      return <ListItem title={item.title} key={item.id} />;
+const List = (props) => {
+  const makeList = () => {
+    const list = props.listItems.map((item) => {
+      return (
+        <ListItem
+          title={item.title}
+          key={item.id}
+          handleClickGroceryItem={props.handleClickGroceryItem}
+          id={item.id}
+        />
+      );
     });
-    return groceriesList;
+    return list;
   };
-
-  render() {
-    return <ul>{this.makeGroceriesList()}</ul>;
-  }
-}
+  return <ul>{makeList()}</ul>;
+};
 
 export default List;

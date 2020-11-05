@@ -1,10 +1,12 @@
 import React from "react";
 import List from "./List";
+import InputField from "./InputField";
 
-const GroceryList = () => {
+const GroceryList = (props) => {
   return (
     <div>
-      <List />
+      <InputField addGroceryItem={props.addGroceryItem} />
+      <List listItems={props.listItems} handleClickGroceryItem={props.handleClickGroceryItem} />
     </div>
   );
 };
