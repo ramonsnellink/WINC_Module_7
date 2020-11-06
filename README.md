@@ -2,4 +2,4 @@
 
 ## Preview of Groceries App:
 
-[Groceries App](https://adoring-dijkstra-715bca.netlify.app)
+[Groceries App](https://ramonsnellink-groceries.netlify.app)
