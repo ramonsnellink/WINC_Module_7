@@ -6,7 +6,11 @@ const GroceryList = (props) => {
   return (
     <div>
       <InputField addGroceryItem={props.addGroceryItem} />
-      <List listItems={props.listItems} handleClickGroceryItem={props.handleClickGroceryItem} />
+      <List
+        listItems={props.listItems}
+        handleClickGroceryItem={props.handleClickGroceryItem}
+        readonly={false}
+      />
     </div>
   );
 };

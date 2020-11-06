@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 const InputField = (props) => {
+  const [field, setField] = useState("");
+
   return (
     <div>
-      <form>
-        <input type="text" name="title" id="" />
-        <button onClick={(e) => props.addGroceryItem(e, "dit")}>Voeg toe</button>
+      <form onSubmit={(e) => props.addGroceryItem(e, field)}>
+        <input
+          type="text"
+          name="title"
+          id=""
+          value={field}
+          onChange={(e) => setField(e.target.value)}
+        />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );

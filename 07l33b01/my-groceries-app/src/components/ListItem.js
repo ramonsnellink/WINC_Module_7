@@ -8,7 +8,8 @@ const ListItem = (props) => {
       className="list-item"
       onClick={() => props.handleClickGroceryItem(props.id)}
     >
-      {props.title}
+      <span>{props.title}</span>
+      {props.readonly ? <span>--{props.amount}</span> : ""}
     </li>
   );
 };
