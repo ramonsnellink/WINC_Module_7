@@ -30,27 +30,14 @@ class Container extends React.Component {
       return item.id === id;
     });
 
-    console.log(itemToAdd);
-
-    // Bij deze if gaat het mis. Hij voegt telkens +2 toe..
     if (doesItemExist) {
-      console.log("Item exists"); // dit werkt
-
-      this.setState((prevState) => {
-        //get index of the item to update
-        const indexOfItem = this.state.shoppingListItems.findIndex((item) => {
-          return item.id === id;
-        });
-
-        const newShoppingList = [...this.state.shoppingListItems]; // make new array to change the amount of
-        console.log("New shopping list", newShoppingList);
-
-        // Why does this add +2 every time?
-        newShoppingList[indexOfItem].amount = prevState.shoppingListItems[indexOfItem].amount + 1;
-        return {
-          shoppingListItems: newShoppingList,
-        };
+      const newShoppingList = [...this.state.shoppingListItems]; // make new array to change the amount of
+      const indexOfItem = this.state.shoppingListItems.findIndex((item) => {
+        return item.id === id;
       });
+      newShoppingList[indexOfItem].amount = newShoppingList[indexOfItem].amount + 1;
+
+      this.setState({ shoppingListItems: newShoppingList });
     } else {
       this.setState((prevState) => {
         return {
@@ -58,9 +45,9 @@ class Container extends React.Component {
         };
       });
     }
-
-    // add an item to the shopping cart, if it doesn't exist there yet.
   };
+
+  // add an item to the shopping cart, if it doesn't exist there yet.
 
   emptyCart = (e) => {
     e.preventDefault();
@@ -77,13 +64,11 @@ class Container extends React.Component {
         groceryItems: [{ id: newId, title: item }, ...prevState.groceryItems],
       };
     });
-    console.log("item:", item);
-    console.log("state:", this.state);
   };
 
   render = () => {
     return (
-      <div>
+      <div className="container">
         <GroceryList
           listItems={this.state.groceryItems}
           handleClickGroceryItem={this.handleClickGroceryItem}
@@ -94,7 +79,6 @@ class Container extends React.Component {
           handleClickGroceryItem={() => ""}
           emptyCart={this.emptyCart}
         />
-        {console.log(this.state)}
       </div>
     );
   };

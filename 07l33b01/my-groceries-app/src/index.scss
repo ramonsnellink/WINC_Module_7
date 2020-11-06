@@ -1,0 +1,110 @@
+@import "./reset";
+
+/* Color Theme Swatches in RGBA */
+$black: rgba(6, 10, 12, 1);
+$darkblue: rgba(24, 52, 63, 1);
+$midblue: rgba(43, 80, 89, 1);
+$brightblue: rgba(77, 165, 165, 1);
+$lightgrey: rgba(216, 216, 216, 1);
+
+/* Color Theme Swatches in RGBA */
+$midpink: rgba(100, 106, 140, 1);
+$darkpink: rgba(64, 68, 89, 1);
+
+@mixin title {
+  font-size: 2rem;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+@mixin button {
+  background-color: $lightgrey; /* Green */
+  border: none;
+  color: black;
+  padding: 12px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $darkblue;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 30px;
+}
+
+.groceries {
+  &__title {
+    @include title;
+  }
+
+  &__inputcontainer {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  &__input {
+    margin-right: 20px;
+    background-color: white; /* Green */
+    border: 1px solid black;
+    color: black;
+    padding: 10px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  &__button {
+    @include button;
+  }
+
+  & .list__item {
+    background-color: $midblue;
+
+    &:nth-child(even) {
+      background-color: $brightblue;
+    }
+  }
+}
+
+.shoppingcart {
+  &__inputcontainer {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+  }
+  &__title {
+    @include title;
+  }
+
+  &__button {
+    @include button;
+  }
+
+  & .list__item {
+    background-color: $midpink;
+
+    &:nth-child(even) {
+      background-color: $darkpink;
+    }
+  }
+}
+
+.list {
+  &__item {
+    padding: 20px;
+    margin-bottom: 2px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+}

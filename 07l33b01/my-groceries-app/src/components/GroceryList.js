@@ -4,14 +4,15 @@ import InputField from "./InputField";
 
 const GroceryList = (props) => {
   return (
-    <div>
+    <section className="groceries">
+      <h1 className="groceries__title">Boodschappenlijst</h1>
       <InputField addGroceryItem={props.addGroceryItem} />
       <List
         listItems={props.listItems}
         handleClickGroceryItem={props.handleClickGroceryItem}
         readonly={false}
       />
-    </div>
+    </section>
   );
 };
 

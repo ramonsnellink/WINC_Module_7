@@ -5,11 +5,11 @@ const ListItem = (props) => {
     <li
       key={props.id}
       value={props.title}
-      className="list-item"
+      className="list__item"
       onClick={() => props.handleClickGroceryItem(props.id)}
     >
-      <span>{props.title}</span>
-      {props.readonly ? <span>--{props.amount}</span> : ""}
+      <span className="list__itemtitle">{props.title}</span>
+      {props.readonly ? <span className="list__itemamount">Aantal: {props.amount}</span> : ""}
     </li>
   );
 };

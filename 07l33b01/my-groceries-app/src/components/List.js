@@ -20,7 +20,7 @@ const List = (props) => {
     });
     return list;
   };
-  return <ul>{makeList()}</ul>;
+  return <ul classname="list">{makeList()}</ul>;
 };
 
 export default List;
