@@ -8,8 +8,7 @@
 - Lifecycle methods
 - Form Practice
 - Hooks
-
-* Intro to Redux and state management
+- Intro to Redux and state management
 
 ## Exercises
 
